@@ -1,3 +1,5 @@
+import { navlink } from "@/constant/Navlink"
+import Link from "next/link"
 
 
 
@@ -5,7 +7,12 @@ function NavmobileModal() {
   return (
     <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog">
-    <div className="modal-content">
+    <div className="modal-content p-3">
+        <div className="d-flex flex-column" style={{"gap":"10px"}}>
+        {navlink.map((l)=>(
+            <Link style={{textDecoration:"none"}} key={l.title} href={l.url}>{l.title}</Link>
+        ))}
+        </div>
     {/* <ul className="list-group">
           <li className="list-group-item"><a className="nav-link scrollto active" href="#hero">Home</a></li>
           <li className="list-group-item"><a className='nav-link scrollto' href='about.html'>About</a></li>
