@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+
+import Script from "next/script";
+import NavmobileModal from "@/component/NavmobileModal";
+import Header from "@/component/Header";
+
+
+// Using a bundler like webpack
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +26,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <>
+      <head>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossOrigin="anonymous"/>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"></link>
+          {/* <link rel="stylesheet" href="bower_components/aos/dist/aos.css" /> */}
+          {/* <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css" rel=
+          "stylesheet"></link> */}
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css"></link>
+          <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+          <link href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css" rel="stylesheet"/>
+      </head>
+      <body className={inter.className}>
+      <NavmobileModal/>
+    <Header/>
+        {children}
+        
+      </body>
+        <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossOrigin="anonymous"
+        />
+        {/* <Script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"/> */}
+        <Script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"/>
+        <Script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"/>
+        <Script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"/>
+        
+        </>
+        
     </html>
   );
 }
