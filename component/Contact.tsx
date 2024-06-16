@@ -28,7 +28,7 @@ function Contact({className}:{className?:string}) {
 
               <div>
                 <i className="ri-mail-send-line"></i>
-                <p><a href="cdn-cgi/l/email-protection.html" className="__cf_email__" data-cfemail="2d44434b426d4c46485e45544c034e4240">[email&#160;protected]</a></p>
+                <p><a href="cdn-cgi/l/email-protection.html" className="__cf_email__" data-cfemail="2d44434b426d4c46485e45544c034e4240">info@akeshya.com</a></p>
               </div>
 
               <div>
